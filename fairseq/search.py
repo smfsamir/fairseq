@@ -19,6 +19,8 @@ from torch import Tensor
 class Search(nn.Module):
     def __init__(self, tgt_dict):
         super().__init__()
+        print("Printing tgt dict!") # NOTE: added by me.
+        print(tgt_dict.indices)
         self.pad = tgt_dict.pad()
         self.unk = tgt_dict.unk()
         self.eos = tgt_dict.eos()

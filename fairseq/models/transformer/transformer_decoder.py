@@ -224,6 +224,9 @@ class TransformerDecoderBase(FairseqIncrementalDecoder):
 
         if not features_only:
             x = self.output_layer(x)
+        # projects vectors to vocabulary size so this should be the 
+        print(x) # NOTE: added by me; used for printing logits.
+        print(x.shape)
         return x, extra
 
     def extract_features(
